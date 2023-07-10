@@ -1,0 +1,64 @@
+Gobot AI Software License Agreement
+
+IMPORTANT: PLEASE READ THIS SOFTWARE LICENSE AGREEMENT CAREFULLY BEFORE USING OR DISTRIBUTING THE Gobot AI SOFTWARE. BY USING OR DISTRIBUTING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, THAT YOU UNDERSTAND IT, AND THAT YOU AGREE TO BE BOUND BY ITS TERMS. IF YOU DO NOT AGREE TO THE TERMS OF THIS AGREEMENT, DO NOT USE OR DISTRIBUTE THE SOFTWARE.
+
+This Gobot AI Software License Agreement (the "Agreement") is entered into by and between Bumble Softwares Inc, having its principal place of business at [Your Address] (hereinafter referred to as the "Licensor"), and the individual or entity downloading or using the Gobot AI software (the "Software") (hereinafter referred to as the "Licensee"). The Licensor and the Licensee shall collectively be referred to as the "Parties."
+
+1. Grant of License:
+
+Subject to the terms and conditions of this Agreement, Licensor hereby grants Licensee a non-exclusive, non-transferable, revocable license to use the Software for the sole purpose of running the Gobot AI application on Licensee's devices and interacting with the Software as intended.
+
+2. Restrictions:
+
+Licensee may not, directly or indirectly:
+
+   a. Modify, adapt, alter, translate, or create derivative works of the Software.
+   b. Reverse engineer, decompile, disassemble, or attempt to derive the source code of the Software, except and only to the extent that such activity is expressly permitted by applicable law.
+   c. Remove, alter, or obscure any proprietary notices or labels on the Software.
+   d. Rent, lease, loan, sublicense, distribute, or otherwise transfer the Software or any rights granted under this Agreement to any third party.
+   e. Use the Software for any unlawful, illegal, or unauthorized purpose.
+   f. Use the Software to infringe upon the intellectual property rights of others.
+   g. Use the Software to transmit any viruses, worms, defects, or other harmful code or files.
+
+3. Ownership:
+
+The Software is and shall remain the exclusive property of Licensor. The Software is protected by copyright and other intellectual property laws. All rights not expressly granted to Licensee under this Agreement are reserved by Licensor.
+
+4. Data Collection and Privacy:
+
+a. By using the Software, Licensee acknowledges and agrees that certain data, including but not limited to user interactions and input, may be collected and processed by Licensor or its affiliates for the purpose of improving the performance, functionality, and user experience of the Software.
+
+b. Licensor is committed to protecting user privacy and complying with applicable data protection laws. Collected data will be handled in accordance with Licensor's Privacy Policy, which can be found at [link to your privacy policy].
+
+c. Licensee has the right to access, modify, or delete their personal data collected by the Software. For inquiries or requests regarding data privacy, please contact Licensor at [contact email/other contact information].
+
+5. Disclaimer of Warranty:
+
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NONINFRINGEMENT. LICENSOR DOES NOT WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE OR UNINTERRUPTED, THAT DEFECTS WILL BE CORRECTED, OR THAT THE SOFTWARE IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. THE ENTIRE RISK ARISING OUT OF THE USE OR PERFORMANCE OF THE SOFTWARE REMAINS WITH LICENSEE.
+
+6. Limitation of Liability:
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, DISTRIBUTION, OR PERFORMANCE OF THE SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. LICENSOR'S LIABILITY SHALL NOT EXCEED THE AMOUNT PAID, IF ANY, BY LICENSEE FOR THE SOFTWARE.
+
+7. Termination:
+
+This Agreement is effective until terminated. Licensee's rights under this Agreement will terminate automatically without notice from Licensor if Licensee fails to comply with any term(s) of this Agreement. Upon termination, Licensee shall cease all use of the Software and destroy all copies of the Software in Licensee's possession or control.
+
+8. Governing Law and Jurisdiction:
+
+This Agreement shall be governed by and construed in accordance with the laws of [Your Jurisdiction]. Any disputes arising under or in connection with this Agreement shall be subject to the exclusive jurisdiction of the courts in [Your Jurisdiction].
+
+9. Entire Agreement:
+
+This Agreement constitutes the entire agreement between the Parties with respect to the Software and supersedes all prior or contemporaneous understandings, agreements, or representations, whether oral or written, relating to the Software.
+
+IN WITNESS WHEREOF, the Parties hereto have executed this Gobot AI Software License Agreement as of the Effective Date.
+
+Bumble Softwares Inc:
+By: Samuelson Ebilado Owei
+Title: Founder & CEO
+
+Licensee:
+By: ______________________
+Title: _____________________
+

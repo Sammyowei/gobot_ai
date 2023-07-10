@@ -1,0 +1,86 @@
+Privacy Policy
+
+Effective Date: 10th July 2023.
+
+Bumble Software Inc. ("we," "us," or "our") is committed to protecting your privacy and handling your personal information with care. This Privacy Policy describes how we collect, use, and disclose personal information when you use our software ("Software"). By using the Software, you consent to the collection, use, and disclosure of your personal information as described in this Privacy Policy.
+
+1. Information We Collect
+
+1.1 Personal Information:
+We may collect personal information that you provide to us when using the Software, such as your name, email address, contact details, and any other information you voluntarily provide. This may include information you provide when you register an account, fill out forms, participate in surveys or promotions, or communicate with us.
+
+1.2 Usage Data:
+We may automatically collect certain information about how you use the Software. This data may include log files, device information (including device type, operating system, and unique device identifiers), IP addresses, browser type, referring/exit pages, pages viewed, clickstream data, and other usage information. We may also collect information about your interactions with the Software, including features accessed, time spent on each feature, and other similar usage data.
+
+1.3 Cookies and Similar Technologies:
+We may use cookies, web beacons, and other similar technologies to enhance your experience with the Software. These technologies help us analyze trends, track users' movements, and gather demographic information. Cookies are small text files that are stored on your device and allow us to recognize your browser or device. You can control the use of cookies at the individual browser level, but if you choose to disable cookies, it may limit your ability to use certain features or functions of the Software.
+
+1.4 Third-Party Services:
+We may integrate third-party services, such as analytics providers, advertising networks, or social media platforms, into the Software. These third-party services may collect information about your use of the Software and other websites or applications over time. We do not control the data collection or processing practices of these third parties, and their use of your information is governed by their respective privacy policies.
+
+1.5 Children's Information:
+The Software is not intended for use by individuals under the age of 10. We do not knowingly collect personal information from children under the specified age. If you are a parent or guardian and believe that your child has provided personal information to us, please contact us using the contact information provided below, and we will take steps to promptly delete that information from our systems.
+
+2. Use of Information
+
+2.1 Personal Information:
+We may use your personal information for the following purposes:
+   - To provide and maintain the Software, including customer support and troubleshooting.
+   - To communicate with you and respond to your inquiries, feedback, or requests.
+   - To personalize your experience and improve the functionality of the Software.
+   - To process transactions or payments related to the Software, if applicable.
+   - To send you important notices, updates, or promotional materials related to the Software, subject to your preferences and applicable laws.
+
+2.2 Usage Data:
+We may use usage data for the following purposes:
+   - To analyze and understand how users interact with the Software, including usage patterns, feature popularity, and user preferences.
+   - To improve the performance, functionality, and user experience of the Software.
+   - To develop and deliver new features, updates, and enhancements to the Software.
+   - To monitor and prevent any unauthorized or illegal use of the Software.
+
+2.3 Aggregated and Anonymized Data:
+We may aggregate and anonymize personal information collected through the Software to create statistical or analytical data. Aggregated and anonymized data does not personally identify you and may be used for any purpose, including research, analysis, marketing, or improving our services.
+
+3. Disclosure of Information
+
+3.1 Service Providers:
+We may engage trusted third-party service providers to perform various tasks on our behalf, such as hosting, data analysis, customer support, or payment processing. These service providers are obligated to handle your personal information with confidentiality and in accordance with applicable data protection laws.
+
+3.2 Legal Compliance:
+We may disclose your personal information if required to do so by law or in response to valid legal requests, such as subpoenas, court orders, or government investigations.
+
+3.3 Business Transfers:
+If we are involved in a merger, acquisition, reorganization, or sale of all or a portion of our assets, your personal information may be transferred as part of that transaction. We will provide notice through the Software and notify you via email or other prominent notice on our website before your personal information is transferred and becomes subject to a different privacy policy.
+
+3.4 Consent:
+We may disclose your personal information to third parties with your consent or at your direction.
+
+4. Data Retention
+
+We will retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. We will securely delete or anonymize your personal information when it is no longer needed for the purposes stated in this Privacy Policy.
+
+5. Data Security
+
+We take appropriate measures to protect the security of your personal information and prevent unauthorized access, disclosure, alteration, or destruction. However, please note that no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee the absolute security of your personal information.
+
+6. Your Rights
+
+Depending on your jurisdiction, you may have certain rights regarding your personal information, including the right to access, correct, update, or delete your information. To exercise these rights or if you have any questions or concerns regarding your personal information, please contact us using the contact information provided below. We will respond to your request in accordance with applicable laws.
+
+7. International Transfers
+
+Your personal information may be transferred to, processed in, and stored in countries other than your own, where data protection laws may differ. By using the Software, you consent to the transfer of your personal information to countries that may have different privacy regulations.
+
+8. Marketing Communications
+
+We may send you marketing communications regarding our products, services, or promotional offers. You can opt-out of receiving such communications at any time by following the unsubscribe instructions provided in the communication or by contacting us using the contact information below.
+
+9. Changes to this Privacy Policy
+
+We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws. Any changes will be effective immediately upon posting the revised Privacy Policy on our website or within the Software. We encourage you to review this Privacy Policy periodically for any updates or changes.
+
+10. Contact Us
+
+If youhave any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at bumblestudio)@gmail.com.
+
+Please note that this is an example privacy policy and should be customized to fit the specific needs and requirements of your software project. It is strongly recommended to consult with a legal professional to ensure compliance with applicable privacy laws and regulations in your jurisdiction.
