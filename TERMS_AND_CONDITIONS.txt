@@ -1,0 +1,60 @@
+Software Terms and Conditions
+
+IMPORTANT: PLEASE READ THESE TERMS AND CONDITIONS ("TERMS") CAREFULLY BEFORE USING OR ACCESSING THE SOFTWARE DEVELOPED BY [YOUR NAME/ORGANIZATION] ("DEVELOPER"). BY USING OR ACCESSING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS, YOU MUST NOT USE OR ACCESS THE SOFTWARE.
+
+1. License Grant
+
+Subject to your compliance with these Terms, Developer grants you a worldwide, non-exclusive, non-transferable, revocable license to install, use, and display the Software for your personal or internal business purposes. This license does not grant you the right to sublicense, distribute, or transfer the Software to any third party without the prior written consent of Developer.
+
+2. Intellectual Property Rights
+
+The Software, including all intellectual property rights, is and shall remain the exclusive property of Developer. These Terms do not grant you any right or license to use any trademarks, logos, or other distinctive brand features of Developer without the express written consent of Developer.
+
+3. Restrictions on Use
+
+You agree to use the Software solely in compliance with these Terms and all applicable laws and regulations. Unless expressly permitted by applicable law, you may not, without the prior written consent of Developer:
+   a. Modify, adapt, translate, or create derivative works based on the Software.
+   b. Reverse engineer, decompile, disassemble, or attempt to discover the source code of the Software.
+   c. Remove, alter, or obscure any proprietary notices or labels on the Software.
+   d. Use the Software for any illegal, unauthorized, or prohibited purposes.
+   e. Use the Software to infringe upon the intellectual property rights of others.
+   f. Rent, lease, lend, sell, sublicense, distribute, or otherwise transfer the Software or any portion thereof.
+
+4. Privacy and Data Collection
+
+Your use of the Software may involve the collection, processing, and transmission of certain data. Developer is committed to protecting your privacy and will handle any data collected in accordance with its Privacy Policy. By using the Software, you consent to the collection, processing, and use of your data as described in the Privacy Policy.
+
+5. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, DEVELOPER DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. DEVELOPER DOES NOT WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE, UNINTERRUPTED, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. YOU ASSUME ALL RISK ARISING FROM YOUR USE OF THE SOFTWARE.
+
+6. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL DEVELOPER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE, OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR IN CONNECTION WITH YOUR USE OR INABILITY TO USE THE SOFTWARE, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION, OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN NO EVENT SHALL DEVELOPER'S TOTAL LIABILITY TO YOU FOR ALL DAMAGES EXCEED THE AMOUNT PAID BY YOU, IF ANY, FOR THE SOFTWARE.
+
+7. Indemnification
+
+You agree to defend, indemnify, and hold harmless Developer, its affiliates, and their respective officers, directors, employees, and agents, from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses (including but not limited to attorney's fees) arising from: (i) your use of the Software; (ii) your violation of these Terms; (iii) your violation of any third-party right, including without limitation any copyright, property, or privacy right; or (iv) any claim that your use of the Software caused damage to a third party. This indemnification obligation will survive the termination or expiration of these Terms and your use of the Software.
+
+8. Governing Law and Dispute Resolution
+
+These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction]. Any disputes arising out of or in connection with these Terms shall be exclusively subject to the jurisdiction of the courts in [Your Jurisdiction].
+
+9. Severability
+
+If any provision of these Terms is held to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect.
+
+10. Waiver
+
+The failure of Developer to enforce any right or provision of these Terms shall not constitute a waiver of such right or provision, and no waiver of any term or condition of these Terms shall be deemed a further or continuing waiver of such term or condition or any other term or condition.
+
+11. Entire Agreement
+
+These Terms constitute the entire agreement between you and Developer regarding the Software and supersede all prior or contemporaneous understandings or agreements, whether oral or written.
+
+12. Modifications
+
+Developer reserves the right to modify or update these Terms at any time without prior notice. Any changes will be effective immediately upon posting the updated Terms on [Your Website/Platform]. Your continued use of the Software after the posting of any changes constitutes your acceptance of such changes.
+
+If you have any questions or concerns regarding these Terms, please contact Developer at bumblestudio0@gmail.com.
+

@@ -50,5 +50,5 @@ We value your feedback and encourage you to report any issues you encounter whil
 
 ## License
 
-Gobot AI is released under the XYZ License. For more details, see the `LICENSE` file included in this repository.
+Gobot AI is released under the Gobot AI Software License Agreement. For more details, see the `LICENSE.txt` file included in this repository.
 
