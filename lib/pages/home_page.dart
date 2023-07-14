@@ -24,7 +24,6 @@ class _HomePageState extends ConsumerState<HomePage> {
   Widget build(BuildContext context) {
     final greeting = ref.watch(greetingProvider);
     final isDarkMode = ref.watch(themeProvider);
-    final currentPage = ref.watch(bottomNavIndexProvider);
 
     return SafeArea(
       child: SingleChildScrollView(
