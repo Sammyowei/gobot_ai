@@ -43,8 +43,8 @@ class _HomePageState extends ConsumerState<HomePage> {
               ),
               20.verticalSpaceFromWidth,
 
-              // TODO: wrap with inkwell
-              InkWell(
+              
+              GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(
                     context,
@@ -193,23 +193,17 @@ class _HomePageState extends ConsumerState<HomePage> {
                     onTap: () {
                       switch (index) {
                         case 0:
-                          // Navigator.of(context).push(
-                          //   MaterialPageRoute(
-                          //     builder: (context) {
-                          //       return const ChatPage(botName: "Gobot AI");
-                          //     },
-                          //   ),
-                          // );
-                          log("has been clicked");
+                     log(index.toString());
+                          log("first button has been clicked");
+                          Navigator.pushNamed(context, "/chat-page",  arguments: <String, dynamic>{
+                            "name": "BFFFBot"
+                          });
                         case 1:
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) =>
-                          //         const ChatPage(botName: "Gobot AI"),
-                          //   ),
-                          // );
-                          log("has been clicked");
+                
+                          log("Second button  clicked");
+                           Navigator.pushNamed(context, "/chat-page",  arguments: <String, dynamic>{
+                            "name": "Q&A"
+                          });
                         default:
                           log("page not added.");
                       }
