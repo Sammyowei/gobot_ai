@@ -16,11 +16,13 @@ class RouteGenerator {
         );
       case "/onboarding":
         return CustomPageRouteWithTransitionAnimation(
-          // transitionDurationinMIliSeconds: 3000,
-          // enterWidget: const Onboarding(),
-          enterWidget: const PageSelector()
-          // transitionDurationinMIliSeconds: 3000,
-        );
+            // transitionDurationinMIliSeconds: 3000,
+            enterWidget: const Onboarding(),
+            curves: Curves.easeInOutSine,
+            reverseCurve: Curves.easeOutSine
+            // enterWidget: const PageSelector()
+            // transitionDurationinMIliSeconds: 3000,
+            );
       case "/sign-up":
         return CustomPageRouteWithTransitionAnimation(
           enterWidget: const SignUp(),
@@ -46,15 +48,19 @@ class RouteGenerator {
           enterWidget: const ChangePassword(),
         );
       case "/chat-page":
-      final argument = settings.arguments;
-      if(argument != null && argument is Map<String, dynamic>){
-final name = argument["name"];
-        return CustomPageRouteWithTransitionAnimation(
-          enterWidget:NewChatPage(
-            botName: name,
-          ),
-        );}
-        else{
+        final argument = settings.arguments;
+        if (argument != null && argument is Map<String, dynamic>) {
+          final name = argument["name"];
+          return CustomPageRouteWithTransitionAnimation(
+            curves: Curves.easeInOutSine,
+            reverseCurve: Curves.easeOutSine,
+            transitionDurationinMIliSeconds: 200,
+            reverseTransitionDurationInMiliSec: 200,
+            enterWidget: NewChatPage(
+              botName: name,
+            ),
+          );
+        } else {
           return _errorRoute();
         }
       default:
