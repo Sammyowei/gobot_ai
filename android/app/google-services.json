@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "111197865432",
+    "project_id": "gobot-ai-ccf87",
+    "storage_bucket": "gobot-ai-ccf87.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111197865432:android:554794c8510ee10f601ead",
+        "android_client_info": {
+          "package_name": "com.bumblesoftware.gobot_ai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111197865432-53kb79e8jkolj05smt3f72qtcbnhu7cp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-7onLB44nFd5XMAIodbhLu8ZFZdS6bsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111197865432-53kb79e8jkolj05smt3f72qtcbnhu7cp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
