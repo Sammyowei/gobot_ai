@@ -57,8 +57,8 @@ class _CustomAppBarState extends ConsumerState<CustomAppBar> {
               onTap: () => Navigator.pop(context),
               child: SvgPicture.asset(
                 AppImage.navBackSvg,
-                height: 40.h,
-                width: 30.h,
+                height: 25.h,
+                width: 25.h,
               ),
             ),
             Container(
@@ -66,13 +66,13 @@ class _CustomAppBarState extends ConsumerState<CustomAppBar> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    radius: 18,
+                    radius: 20.r,
                     backgroundColor:
                         CustomAppColors.primaryColor.withOpacity(0.7),
                     child: Image.asset(
                       AppImage.chatbotImage,
-                      height: 35.h,
-                      width: 35.w,
+                      height: 25.h,
+                      width: 25.w,
                     ),
                   ),
                   10.horizontalSpace,

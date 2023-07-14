@@ -1,5 +1,6 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:gobot_ai/pages/chat_page.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,9 +24,10 @@ class _HomePageState extends ConsumerState<HomePage> {
   Widget build(BuildContext context) {
     final greeting = ref.watch(greetingProvider);
     final isDarkMode = ref.watch(themeProvider);
+    final currentPage = ref.watch(bottomNavIndexProvider);
 
-    return Scaffold(
-      body: SafeArea(
+    return SafeArea(
+      child: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 30, right: 30).w,
           child: Column(
@@ -41,25 +43,25 @@ class _HomePageState extends ConsumerState<HomePage> {
                     : CustomAppColors.boldTextLightTheme,
               ),
               20.verticalSpaceFromWidth,
-              SizedBox(
-                height: 270.h,
-                child: Stack(
-                  children: [
-                    Positioned(
-                      top: 30,
-                      right: 20,
-                      bottom: 10,
-                      left: 20,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(
-                            builder: (context) {
-                              return const ChatPage(
-                                botName: "Gobot AI",
-                              );
-                            },
-                          ));
-                        },
+
+              // TODO: wrap with inkwell
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    "/chat-page",
+                    arguments: <String, dynamic>{"name": "Gobot AI"},
+                  );
+                },
+                child: SizedBox(
+                  height: 250.h,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        top: 30,
+                        right: 20,
+                        bottom: 10,
+                        left: 20,
                         child: Container(
                           height: 266.h,
                           width: 268.w,
@@ -139,8 +141,8 @@ class _HomePageState extends ConsumerState<HomePage> {
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               61.verticalSpace,
@@ -159,8 +161,8 @@ class _HomePageState extends ConsumerState<HomePage> {
                     Container(
                       child: GestureDetector(
                         onTap: () => ref
-                            .read(pageSellectorProvider.notifier)
-                            .moveToNextPage(1),
+                            .read(bottomNavIndexProvider.notifier)
+                            .getIndex(1),
                         child: Row(
                           children: [
                             CustomText(
@@ -188,7 +190,33 @@ class _HomePageState extends ConsumerState<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: List.generate(
                   explore.length,
-                  (index) => explore[index],
+                  (index) => InkWell(
+                    onTap: () {
+                      switch (index) {
+                        case 0:
+                          // Navigator.of(context).push(
+                          //   MaterialPageRoute(
+                          //     builder: (context) {
+                          //       return const ChatPage(botName: "Gobot AI");
+                          //     },
+                          //   ),
+                          // );
+                          log("has been clicked");
+                        case 1:
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) =>
+                          //         const ChatPage(botName: "Gobot AI"),
+                          //   ),
+                          // );
+                          log("has been clicked");
+                        default:
+                          log("page not added.");
+                      }
+                    },
+                    child: explore[index],
+                  ),
                 ),
               ),
               10.verticalSpace

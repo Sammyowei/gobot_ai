@@ -26,6 +26,7 @@ class _ExplorePageState extends ConsumerState<ExplorePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              10.verticalSpace,
               CustomText(
                 text: "Explore",
                 fontSize: 30.sp,
@@ -34,6 +35,7 @@ class _ExplorePageState extends ConsumerState<ExplorePage> {
                     ? CustomAppColors.boldTextDarkTheme
                     : CustomAppColors.boldTextLightTheme,
               ),
+              20.verticalSpace,
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,

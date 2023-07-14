@@ -24,82 +24,92 @@ class _PageSelectorState extends ConsumerState<PageSelector> {
   ];
   @override
   Widget build(BuildContext context) {
-    final pageController = ref.watch(pageSellectorProvider);
+    // final pageController = ref.watch(pageSellectorProvider);
     Size size = MediaQuery.of(context).size;
 
     final isDarkMode = ref.watch(themeProvider);
     final currentIndex = ref.watch(bottomNavIndexProvider);
     return Scaffold(
-      body: PageView.builder(
-        itemCount: pages.length,
-        controller: pageController,
-        onPageChanged: (value) {
-          ref.read(bottomNavIndexProvider.notifier).getIndex(value);
-        },
-        itemBuilder: (context, index) {
-          return pages[index];
-        },
-      ),
-      bottomNavigationBar: Container(
-        margin: const EdgeInsets.all(20),
-        height: 66.h,
-        decoration: BoxDecoration(
-          color: isDarkMode
-              ? const Color(0xffFCFCFC).withOpacity(0.2)
-              : const Color(0xffF4F4F4),
-          borderRadius: BorderRadius.circular(50).r,
-          boxShadow: [
-            BoxShadow(
-              color: isDarkMode
-                  ? const Color(0xffFFFFFF).withOpacity(.09)
-                  : const Color(0xff000000).withOpacity(.25),
-              blurRadius: 30,
-              offset: const Offset(0, 10),
-            )
-          ],
-        ),
-        child: ListView.builder(
-          itemCount: 3,
-          scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.symmetric(horizontal: size.width * .024).w,
-          itemBuilder: (context, index) => InkWell(
-            onTap: () {
-              ref.read(bottomNavIndexProvider.notifier).getIndex(index);
-              ref.read(pageSellectorProvider.notifier).moveToNextPage(index);
-            },
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            child: Padding(
-              padding: const EdgeInsets.all(8).w,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  6.5.horizontalSpace,
-                  // AnimatedContainer(
-                  //   duration: Duration(milliseconds: 1500),
-                  //   curve: Curves.fastLinearToSlowEaseIn,
-                  //   margin: EdgeInsets.only(
-                  //     bottom: index == currentIndex ? size.width * 0.014 : 0,
-                  //   ),
-                  //   decoration: BoxDecoration(
-                  //     color: Colors.blueAccent,
-                  //     borderRadius: BorderRadius.vertical(
-                  //       bottom: Radius.circular(10),
-                  //     ),
-                  //   ),
-                  // ),
+      // body: PageView.builder(
+      //   itemCount: pages.length,
+      //   controller: pageController,
+      //   onPageChanged: (value) {
+      //     ref.read(bottomNavIndexProvider.notifier).getIndex(value);
+      //   },
+      //   itemBuilder: (context, index) {
+      //     return pages[index];
+      //   },
+      // ),
+      body: pages[currentIndex],
+      bottomNavigationBar: SizedBox(
+        height: 70.h,
+        child: Container(
+          margin: const EdgeInsets.only(
+            left: 20,
+            right: 20,
+            top: 10,
+            bottom: 10,
+          ).w,
+          height: 70.h,
+          decoration: BoxDecoration(
+            color: isDarkMode
+                ? const Color(0xffFCFCFC).withOpacity(0.2)
+                : const Color(0xffF4F4F4),
+            borderRadius: BorderRadius.circular(50).r,
+            boxShadow: [
+              BoxShadow(
+                color: isDarkMode
+                    ? const Color(0xffFFFFFF).withOpacity(.09)
+                    : const Color(0xff000000).withOpacity(.25),
+                blurRadius: 30,
+                offset: const Offset(0, 10),
+              )
+            ],
+          ),
+          child: Center(
+            child: ListView.builder(
+              itemCount: 3,
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.symmetric(horizontal: size.width * .024).w,
+              itemBuilder: (context, index) => InkWell(
+                onTap: () {
+                  ref.read(bottomNavIndexProvider.notifier).getIndex(index);
+                },
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                child: Padding(
+                  padding: const EdgeInsets.all(8).w,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      6.5.horizontalSpace,
+                      // AnimatedContainer(
+                      //   duration: Duration(milliseconds: 1500),
+                      //   curve: Curves.fastLinearToSlowEaseIn,
+                      //   margin: EdgeInsets.only(
+                      //     bottom: index == currentIndex ? size.width * 0.014 : 0,
+                      //   ),
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.blueAccent,
+                      //     borderRadius: BorderRadius.vertical(
+                      //       bottom: Radius.circular(10),
+                      //     ),
+                      //   ),
+                      // ),
 
-                  Padding(
-                    padding: const EdgeInsets.only(right: 85).w,
-                    child: SvgPicture.asset(
-                      listOfSvgIcons[index],
-                      color: index == currentIndex
-                          ? CustomAppColors.primaryColor
-                          : CustomAppColors.bottomNavItemColor,
-                      width: size.width.w * 0.076.w,
-                    ),
-                  )
-                ],
+                      Padding(
+                        padding: const EdgeInsets.only(right: 85, left: 9).w,
+                        child: SvgPicture.asset(
+                          listOfSvgIcons[index],
+                          color: index == currentIndex
+                              ? CustomAppColors.primaryColor
+                              : CustomAppColors.bottomNavItemColor,
+                          width: size.width.w * 0.076.w,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
             ),
           ),

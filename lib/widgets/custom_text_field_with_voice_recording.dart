@@ -27,7 +27,14 @@ class CustomChatTextField extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return Container();
+                  },
+                );
+              },
               child: Container(
                 child: Center(
                   child: SvgPicture.asset(

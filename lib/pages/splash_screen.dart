@@ -1,4 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gobot_ai/providers/theme_provider.dart';
 
 import 'package:gobot_ai/style/app_colors.dart';
 import 'package:gobot_ai/utils/utils.dart';
@@ -60,7 +61,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
                 ],
               ),
             ),
-            320.verticalSpace,
+            200.verticalSpace,
             CustomText(
               text: "Version 2.0.0",
               textColor: CustomAppColors.versionNameColorLM,

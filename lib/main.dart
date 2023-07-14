@@ -48,9 +48,12 @@ class MyApp extends ConsumerStatefulWidget {
 class _MyAppState extends ConsumerState<MyApp> {
   @override
   Widget build(BuildContext context) {
+    final theme = ref.watch(themeProvider);
     return ScreenUtilInit(
       designSize: const Size(393, 852),
       useInheritedMediaQuery: true,
+      minTextAdapt: true,
+      splitScreenMode: true,
       builder: (context, child) {
         return child!;
       },
@@ -59,7 +62,7 @@ class _MyAppState extends ConsumerState<MyApp> {
         themeMode: ThemeMode.system,
         theme: getAppTheme(
           context,
-          ref.watch(themeProvider),
+          theme,
         ),
         supportedLocales: flc.supportedLocales.map(
           (locales) => Locale(locales),

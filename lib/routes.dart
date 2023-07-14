@@ -17,8 +17,8 @@ class RouteGenerator {
       case "/onboarding":
         return CustomPageRouteWithTransitionAnimation(
           // transitionDurationinMIliSeconds: 3000,
-          enterWidget: const Onboarding(),
-          // enterWidget: const PageSelector()
+          // enterWidget: const Onboarding(),
+          enterWidget: const PageSelector()
           // transitionDurationinMIliSeconds: 3000,
         );
       case "/sign-up":
@@ -46,12 +46,17 @@ class RouteGenerator {
           enterWidget: const ChangePassword(),
         );
       case "/chat-page":
-        final args = settings.arguments as Map<String, dynamic>;
-        final botName = args["bot-name"];
+      final argument = settings.arguments;
+      if(argument != null && argument is Map<String, dynamic>){
+final name = argument["name"];
         return CustomPageRouteWithTransitionAnimation(
-            enterWidget: ChatPage(
-          botName: botName,
-        ));
+          enterWidget:NewChatPage(
+            botName: name,
+          ),
+        );}
+        else{
+          return _errorRoute();
+        }
       default:
         return _errorRoute();
     }

@@ -9,8 +9,12 @@ class CustomButtonWithTheme extends ConsumerWidget {
   final Widget? child;
   final String? iconPath;
   final bool forTheme;
+  final double? width;
+  final double? height;
   final VoidCallback? onTap;
   const CustomButtonWithTheme({
+    this.width,
+    this.height,
     this.onTap,
     this.iconPath,
     this.forTheme = false,
@@ -24,8 +28,8 @@ class CustomButtonWithTheme extends ConsumerWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 353.w,
-        height: 82.h,
+        width: width ?? 353.w,
+        height: height ?? 82.h,
         padding: const EdgeInsets.only(left: 15, right: 15).w,
         decoration: ShapeDecoration(
           color: isDarkMode ? const Color(0x33AFAFAF) : Colors.white,
