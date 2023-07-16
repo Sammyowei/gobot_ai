@@ -13,6 +13,7 @@ class NewChatPage extends ConsumerStatefulWidget {
 }
 
 class _NewChatPageState extends ConsumerState<NewChatPage> {
+  final controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final darkTheme = ref.watch(themeProvider);
@@ -36,7 +37,9 @@ class _NewChatPageState extends ConsumerState<NewChatPage> {
           ],
         ),
       ),
-      bottomSheet: const CustomChatTextField(),
+      bottomSheet: CustomChatTextField(
+        controller: controller,
+      ),
     );
   }
 }
