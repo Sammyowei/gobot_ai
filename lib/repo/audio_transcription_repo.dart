@@ -1,11 +1,10 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:http/http.dart' as http;
 import 'package:gobot_ai/env/env.dart';
 
 class AudioTransciptionRepo {
-  Future<void> transcribeAudio(String? filePath) async {
+  Future<String> transcribeAudio(String? filePath) async {
     final apiKey = EnvVariable.API_KEY;
     final url = EnvVariable.audioTranscriptionUrl;
     final model = EnvVariable.transcriptionAIModel;
@@ -32,9 +31,9 @@ class AudioTransciptionRepo {
         await response.stream.bytesToString(),
       );
       final text = jsonResponse["text"];
-      log(text);
+      return text;
     } else {
-      log(response.reasonPhrase!);
+      return response.reasonPhrase!;
     }
   }
 }

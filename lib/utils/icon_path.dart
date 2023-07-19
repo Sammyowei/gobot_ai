@@ -25,4 +25,6 @@ class AppIcons {
   static String termsAndConditions = "terms_and_conditions".svg;
   static String recorder = "recorder_icon".svg;
   static String send = "send".svg;
+  static String pause = "pause".svg;
+  static String stop = "stop-button".png;
 }

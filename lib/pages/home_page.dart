@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:gobot_ai/models/models.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,7 +50,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   Navigator.pushNamed(
                     context,
                     "/chat-page",
-                    arguments: <String, dynamic>{"name": "Gobot AI"},
+                    arguments: <String, dynamic>{"name": "Gobot AI", "model": AiBotModels.gobot},
                   );
                 },
                 child: SizedBox(

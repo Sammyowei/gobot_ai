@@ -17,10 +17,10 @@ class RouteGenerator {
       case "/onboarding":
         return CustomPageRouteWithTransitionAnimation(
             // transitionDurationinMIliSeconds: 3000,
-            enterWidget: const Onboarding(),
+            // enterWidget: const Onboarding(),
             curves: Curves.easeInOutSine,
-            reverseCurve: Curves.easeOutSine
-            // enterWidget: const PageSelector()
+            reverseCurve: Curves.easeOutSine,
+            enterWidget: const PageSelector()
             // transitionDurationinMIliSeconds: 3000,
             );
       case "/sign-up":
@@ -51,6 +51,7 @@ class RouteGenerator {
         final argument = settings.arguments;
         if (argument != null && argument is Map<String, dynamic>) {
           final name = argument["name"];
+          final model = argument["model"];
           return CustomPageRouteWithTransitionAnimation(
             curves: Curves.easeInOutSine,
             reverseCurve: Curves.easeOutSine,
@@ -58,6 +59,7 @@ class RouteGenerator {
             reverseTransitionDurationInMiliSec: 200,
             enterWidget: NewChatPage(
               botName: name,
+              models: model,
             ),
           );
         } else {
