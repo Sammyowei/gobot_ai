@@ -195,6 +195,7 @@ class _CustomChatTextFieldState extends ConsumerState<CustomChatTextField> {
 
   void addTextMessage() async {
     final text = widget.controller?.text.trim();
+    widget.controller!.clear();
     ref.read(chatHistoryProvider.notifier).addChat(
           ChatBubble(
             messageType: MessageType.sender,
