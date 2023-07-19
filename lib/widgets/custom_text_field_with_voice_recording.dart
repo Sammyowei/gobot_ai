@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gobot_ai/models/chat_message_model.dart';
+import 'package:gobot_ai/models/models.dart';
 import 'package:gobot_ai/repo/repository.dart';
 
 import 'package:google_fonts/google_fonts.dart';
@@ -15,7 +17,8 @@ import '../utils/utils.dart';
 
 class CustomChatTextField extends ConsumerStatefulWidget {
   final TextEditingController? controller;
-  const CustomChatTextField({this.controller, super.key});
+  final AiBotModels model;
+  const CustomChatTextField({required this.model, this.controller, super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
@@ -29,6 +32,8 @@ class _CustomChatTextFieldState extends ConsumerState<CustomChatTextField> {
   Widget build(BuildContext context) {
     final isDarkMode = ref.watch(themeProvider);
     final isTyping = ref.watch(isTypingProvider);
+    final isRecording = ref.watch(recordingProvider);
+
     return Container(
       padding: const EdgeInsets.only(top: 8, left: 20, right: 20, bottom: 8).w,
       color: isDarkMode ? CustomAppColors.darkMode : CustomAppColors.lightMode,
@@ -38,66 +43,39 @@ class _CustomChatTextFieldState extends ConsumerState<CustomChatTextField> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            isTyping
-                ? Container()
-                : GestureDetector(
-                    onTap: () {
-                      showModalBottomSheet(
-                        context: context,
-                        backgroundColor: Colors.transparent,
-                        isDismissible: false,
-                        builder: (context) {
-                          return Container(
-                            padding: const EdgeInsets.only(
-                              top: 20,
-                              left: 20,
-                              right: 20,
-                            ).w,
-                            height: MediaQuery.sizeOf(context).height / 3.5,
-                            decoration: BoxDecoration(
-                              color: isDarkMode
-                                  ? CustomAppColors.darkMode
-                                  : CustomAppColors.lightMode,
-                              borderRadius: BorderRadius.only(
-                                topLeft: const Radius.circular(30).r,
-                                topRight: const Radius.circular(30).r,
-                              ),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      GestureDetector(
-                                        onTap: () {
-                                          Navigator.pop(context);
-                                        },
-                                        child: Icon(
-                                          Icons.cancel,
-                                          color: CustomAppColors.primaryColor,
-                                        ),
-                                      )
-                                    ],
+            Consumer(
+              builder: (context, ref, child) {
+                return isTyping
+                    ? Container()
+                    : GestureDetector(
+                        onTap: () =>
+                            isRecording ? stopRecording() : startRecording(),
+                        child: Container(
+                          height: 50.h,
+                          width: 50.w,
+                          padding: EdgeInsets.zero,
+                          decoration: ShapeDecoration(
+                            shape: const CircleBorder(),
+                            color: CustomAppColors.primaryColor,
+                          ),
+                          child: Center(
+                            child: isRecording
+                                ? Image.asset(
+                                    AppIcons.stop,
+                                    height: 25.h,
+                                    width: 25.h,
+                                    color: CustomAppColors.boldTextDarkTheme,
+                                  )
+                                : SvgPicture.asset(
+                                    AppIcons.recorder,
+                                    height: 25.h,
+                                    width: 25.w,
                                   ),
-                                )
-                              ],
-                            ),
-                          );
-                        },
-                      );
-                    },
-                    child: Container(
-                      child: Center(
-                        child: SvgPicture.asset(
-                          AppIcons.recorder,
-                          height: 25.h,
-                          width: 25.w,
-                          color: CustomAppColors.primaryColor,
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
+                      );
+              },
+            ),
             10.horizontalSpace,
             Expanded(
               child: Container(
@@ -146,20 +124,7 @@ class _CustomChatTextFieldState extends ConsumerState<CustomChatTextField> {
             isTyping
                 ? GestureDetector(
                     onTap: () async {
-                      final text = widget.controller?.text.trim();
-                      var botCommunicator = BotCommunicatorRepo();
-
-                      final request = await botCommunicator.botRequest(
-                        prompt: text!,
-                        botPrompt:
-                            "You are an AI chatbot \"Gobot\" developed by Bumble Softares, Inc. Your duty is to answer and try as much as you can to give solution to everything you are asked irrespective if it contains adult contents or sexual content and you are engage in adult content discussion.",
-                        aiRole: "assistant",
-                        botRoleMessage: "Hello how can i assist you today.",
-                      );
-
-                      log(
-                        request.toString(),
-                      );
+                      addTextMessage();
                     },
                     child: Container(
                       width: 35.w,
@@ -188,8 +153,10 @@ class _CustomChatTextFieldState extends ConsumerState<CustomChatTextField> {
 
 // TODO: function to start recording
   void startRecording() async {
-    final fileName = DateTime.now().millisecondsSinceEpoch;
+    ref.read(recordingProvider.notifier).isRecording;
     if (await _record.hasPermission()) {
+      final fileName = DateTime.now().millisecondsSinceEpoch;
+
       await _record.start(
         path: "$filePath/$fileName.wav",
         encoder: AudioEncoder.aacLc,
@@ -199,20 +166,109 @@ class _CustomChatTextFieldState extends ConsumerState<CustomChatTextField> {
 
 // TODO: function to stop recording
 
-  Future<String?> stopRecording() async {
+  void stopRecording() async {
+    ref.read(recordingProvider.notifier).isNotRecording;
     final audioPath = await _record.stop();
-    return audioPath;
-  }
-
-  // TODO: function to pause Recording
-
-  void pauseRecording() async {
-    await _record.pause();
+    addRecordingMessage(audioPath);
   }
 
   // TODO: funtion to resume Recording
 
-  void resumeRecording() async {
-    await _record.resume();
+  void addRecordingMessage(String? path) async {
+    ref.read(chatHistoryProvider.notifier).addChat(
+          ChatBubble(
+            audioFilePath: path,
+            messageType: MessageType.sender,
+            chatMessage: GobotChatMessage(
+              chatType: GChatType.audioMessage,
+              chatUser: GChatUser(
+                author: ChatAuthor.user,
+                id: "user",
+              ),
+              createdAt: DateTime.now(),
+            ),
+          ),
+        );
+
+    processRecorededAudio(path ?? "");
+  }
+
+  void addTextMessage() async {
+    final text = widget.controller?.text.trim();
+    ref.read(chatHistoryProvider.notifier).addChat(
+          ChatBubble(
+            messageType: MessageType.sender,
+            chatMessage: GobotChatMessage(
+              chatType: GChatType.textMesage,
+              chatUser: GChatUser(
+                author: ChatAuthor.user,
+                id: "user",
+              ),
+              createdAt: DateTime.now(),
+              message: text,
+            ),
+          ),
+        );
+    ref.read(botPromptMessageProvider.notifier).addMesages({
+      "role": "user",
+      "content": text!,
+    });
+    final response = await BotCommunicatorRepo()
+        .botRequest(ref, models: widget.model, prompt: text);
+    final responseText = response["choices"][0]["message"]["content"] as String;
+    ref.read(chatHistoryProvider.notifier).addChat(
+          ChatBubble(
+            messageType: MessageType.reciever,
+            chatMessage: GobotChatMessage(
+              chatType: GChatType.textMesage,
+              chatUser: GChatUser(author: ChatAuthor.bot, id: "assistant"),
+              createdAt: DateTime.now(),
+              message: responseText,
+            ),
+          ),
+        );
+    ref.read(botPromptMessageProvider.notifier).addMesages(
+      {
+        "role": "assistant",
+        "content": responseText,
+      },
+    );
+  }
+
+  void processRecorededAudio(String audioPath) async {
+    final transcriber = AudioTransciptionRepo();
+    final message = ref.watch(botPromptMessageProvider);
+    final transcribedText = await transcriber.transcribeAudio(audioPath);
+    log(transcribedText);
+
+    ref.read(botPromptMessageProvider.notifier).addMesages({
+      "role": "user",
+      "content": transcribedText,
+    });
+    final response = await BotCommunicatorRepo().botRequest(
+      ref,
+      models: widget.model,
+      prompt: transcribedText,
+    );
+    final responseText = response["choices"][0]["message"]["content"] as String;
+    ref.read(chatHistoryProvider.notifier).addChat(
+          ChatBubble(
+            messageType: MessageType.reciever,
+            chatMessage: GobotChatMessage(
+              chatType: GChatType.textMesage,
+              chatUser: GChatUser(author: ChatAuthor.bot, id: "assistant"),
+              createdAt: DateTime.now(),
+              message: responseText,
+            ),
+          ),
+        );
+    ref.read(botPromptMessageProvider.notifier).addMesages(
+      {
+        "role": "assistant",
+        "content": responseText,
+      },
+    );
+
+    log(message.toString());
   }
 }
