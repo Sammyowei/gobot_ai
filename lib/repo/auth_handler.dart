@@ -34,4 +34,40 @@ class AuthHander implements AuthModel {
       throw UnimplementedError();
     }
   }
+
+  @override
+  Future confirmPasswordReset({required String code, required newPassword}) {
+    FirebaseAuth.instance
+        .confirmPasswordReset(code: code, newPassword: newPassword);
+    throw UnimplementedError();
+  }
+
+  @override
+  User? getUserCredentials() {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      return user;
+    } catch (userCredentialsError) {
+      throw UnimplementedError();
+    }
+  }
+
+  @override
+  Future<void> changePassword({required String newPassword}) async {
+    try {
+      await FirebaseAuth.instance.currentUser!.updatePassword(newPassword);
+    } catch (changePasswordError) {
+      throw UnimplementedError();
+    }
+  }
+
+  @override
+  String? getSessionId() {
+    try {
+      final sessionID = FirebaseAuth.instance.tenantId;
+      return sessionID;
+    } catch (getSessionIdError) {
+      throw UnimplementedError();
+    }
+  }
 }

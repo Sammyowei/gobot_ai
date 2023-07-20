@@ -8,4 +8,11 @@ abstract class AuthModel {
       {required String email, required String password});
 
   Future<void> forgotPassword({required String email});
+
+  Future confirmPasswordReset({required String code, required newPassword});
+
+  User? getUserCredentials();
+
+  Future changePassword({required String newPassword});
+  String? getSessionId();
 }
