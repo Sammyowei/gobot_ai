@@ -43,14 +43,15 @@ class _HomePageState extends ConsumerState<HomePage> {
                     : CustomAppColors.boldTextLightTheme,
               ),
               20.verticalSpaceFromWidth,
-
-              
               GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(
                     context,
                     "/chat-page",
-                    arguments: <String, dynamic>{"name": "Gobot AI", "model": AiBotModels.gobot},
+                    arguments: <String, dynamic>{
+                      "name": "Gobot AI",
+                      "model": AiBotModels.sassyBot
+                    },
                   );
                 },
                 child: SizedBox(
@@ -194,17 +195,14 @@ class _HomePageState extends ConsumerState<HomePage> {
                     onTap: () {
                       switch (index) {
                         case 0:
-                     log(index.toString());
+                          log(index.toString());
                           log("first button has been clicked");
-                          Navigator.pushNamed(context, "/chat-page",  arguments: <String, dynamic>{
-                            "name": "BFFFBot"
-                          });
+                          Navigator.pushNamed(context, "/chat-page",
+                              arguments: <String, dynamic>{"name": "BFFFBot"});
                         case 1:
-                
                           log("Second button  clicked");
-                           Navigator.pushNamed(context, "/chat-page",  arguments: <String, dynamic>{
-                            "name": "Q&A"
-                          });
+                          Navigator.pushNamed(context, "/chat-page",
+                              arguments: <String, dynamic>{"name": "Q&A"});
                         default:
                           log("page not added.");
                       }

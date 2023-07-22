@@ -18,7 +18,9 @@ import '../utils/utils.dart';
 class CustomChatTextField extends ConsumerStatefulWidget {
   final TextEditingController? controller;
   final AiBotModels model;
-  const CustomChatTextField({required this.model, this.controller, super.key});
+  final ScrollController? scrollController;
+  const CustomChatTextField(
+      {required this.model, this.controller, this.scrollController, super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
@@ -210,6 +212,7 @@ class _CustomChatTextFieldState extends ConsumerState<CustomChatTextField> {
             ),
           ),
         );
+    widget.scrollController!.jumpTo(0);
     ref.read(botPromptMessageProvider.notifier).addMesages({
       "role": "user",
       "content": text!,
@@ -238,7 +241,7 @@ class _CustomChatTextFieldState extends ConsumerState<CustomChatTextField> {
 
   void processRecorededAudio(String audioPath) async {
     final transcriber = AudioTransciptionRepo();
-    final message = ref.watch(botPromptMessageProvider);
+
     final transcribedText = await transcriber.transcribeAudio(audioPath);
     log(transcribedText);
 
@@ -270,6 +273,7 @@ class _CustomChatTextFieldState extends ConsumerState<CustomChatTextField> {
       },
     );
 
+    final message = ref.watch(botPromptMessageProvider);
     log(message.toString());
   }
 }
