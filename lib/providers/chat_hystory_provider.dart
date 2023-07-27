@@ -6,17 +6,22 @@ final chatHistoryProvider =
   return ChatNotifier();
 });
 
-final botPromptMessageProvider =
-    StateNotifierProvider<BotPromptNotifier, List<Map<String, String>>>(
-        (ref) => BotPromptNotifier());
-
 class ChatNotifier extends StateNotifier<List<ChatBubble>> {
   ChatNotifier() : super([]);
 
   void addChat(ChatBubble chat) {
     state = [...state, chat];
   }
+  void clearChat(){
+    state.clear();
+  }
+
+
 }
+
+final botPromptMessageProvider =
+    StateNotifierProvider<BotPromptNotifier, List<Map<String, String>>>(
+        (ref) => BotPromptNotifier());
 
 class BotPromptNotifier extends StateNotifier<List<Map<String, String>>> {
   BotPromptNotifier() : super([]);
@@ -27,5 +32,10 @@ class BotPromptNotifier extends StateNotifier<List<Map<String, String>>> {
 
   void addMainPrompt(List<Map<String, String>> mainPrompt) {
     state = [...state, ...mainPrompt];
+  }
+
+  void clearPrompt() {
+    state.clear();
+    return;
   }
 }

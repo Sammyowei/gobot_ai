@@ -214,8 +214,7 @@ class _CustomChatTextFieldState extends ConsumerState<CustomChatTextField> {
       "role": "user",
       "content": text!,
     });
-    final response = await BotCommunicatorRepo()
-        .botRequest(ref, models: widget.model, prompt: text);
+    final response = await BotCommunicatorRepo().botRequest(ref);
     final responseText = response["choices"][0]["message"]["content"] as String;
     ref.read(chatHistoryProvider.notifier).addChat(
           ChatBubble(
@@ -248,8 +247,6 @@ class _CustomChatTextFieldState extends ConsumerState<CustomChatTextField> {
     });
     final response = await BotCommunicatorRepo().botRequest(
       ref,
-      models: widget.model,
-      prompt: transcribedText,
     );
     final responseText = response["choices"][0]["message"]["content"] as String;
     ref.read(chatHistoryProvider.notifier).addChat(

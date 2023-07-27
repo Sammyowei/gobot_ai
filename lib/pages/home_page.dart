@@ -50,7 +50,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   Navigator.pushNamed(
                     context,
                     "/chat-page",
-                    arguments: <String, dynamic>{"name": "Gobot AI", "model": AiBotModels.gobot},
+                    arguments: <String, dynamic>{"name": "Gobot AI", "model": AiBotModels.sassyBot},
                   );
                 },
                 child: SizedBox(
